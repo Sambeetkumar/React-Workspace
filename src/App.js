@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Note from "./components/Note";
 import Footer from "./components/Footer";
-import notes from "./notes";
+import CreateArea from "./components/CreateArea";
 
 function App() {
   const [btntxt, setBtntext] = useState("enable dark mode");
@@ -11,6 +11,7 @@ function App() {
     color: "black",
     backgroundColor: "white",
   });
+  const [notes, setNotes] = useState([]);
   const darkModeToggle = () => {
     if (btnstyle.color === "black") {
       setBtnstyle({
@@ -26,14 +27,30 @@ function App() {
       setBtntext("enable dark mode");
     }
   };
+  function addNote(newNote) {
+    setNotes(prevNotes => {
+      return [...prevNotes, newNote];
+    });
+  }
+
+  function deleteNote(id) {
+    setNotes(prevNotes => {
+      return prevNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <React.Fragment className="total">
       <Header btnstyle={btnstyle} btntxt={btntxt} func={darkModeToggle} />
-      {notes.map((noteitem) => (
+      <CreateArea onAdd={addNote} />
+      {notes.map((noteitem,index) => (
         <Note
-          key={noteitem.key}
+          key={index}
+          id={index}
           title={noteitem.title}
           content={noteitem.content}
+          onDelete={deleteNote}
         />
       ))}
       <Footer />
