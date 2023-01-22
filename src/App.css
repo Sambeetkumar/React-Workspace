@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header {
+  background-color: #f5ba13;
   color: white;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
 }
-
-.App-link {
-  color: #61dafb;
+header h1{
+  margin-top: 0%;
+  margin-bottom: 2%;
+  padding: 16px 32px;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 button {
+  float: right;
+  font-weight: 100;
+  font-size: 80%;
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+  transition: .5s;
+}
+.note {
+  margin: 16px;
+  background-color: #fff;
+  width: 240px;
+  float: left;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.note h2,
+.note p {
+  font-size: 1.2em ;
+}
+footer {
+  position: absolute;
+  bottom: 3px;
+  text-align: center;
+  width: 100%;
 }
