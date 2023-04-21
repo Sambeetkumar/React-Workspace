@@ -1,24 +1,8 @@
 header {
-  background-color: #f5ba13;
-  color: white;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
 }
 header h1{
-  margin-top: 0%;
-  margin-bottom: 2%;
-  padding: 16px 32px;
   font-family: "McLaren", cursive;
-  font-weight: 200;
-}
-h1 button {
-  float: right;
-  font-weight: 100;
-  font-size: 80%;
-  margin-top: 4px;
-  padding: 4px;
-  border-radius: 5px;
-  border: none;
-  transition: .5s;
 }
 .note {
   margin: 16px;

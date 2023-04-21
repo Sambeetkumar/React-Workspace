@@ -21,12 +21,16 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
-    setNote({
-      title: "",
-      content: "",
-    });
     event.preventDefault();
+    if (note.title === "" || note.content === "") {
+      alert("Please fill all the fields");
+    } else {
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: "",
+      });
+    }
   }
   function expand() {
     setExpanded(true);
@@ -40,6 +44,7 @@ function CreateArea(props) {
             onChange={handleChange}
             value={note.title}
             placeholder="Title"
+            required
           />
         )}
         <textarea
@@ -49,6 +54,7 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows={isExpanded ? "3" : "1"}
           onClick={expand}
+          required
         />
         <Zoom in={isExpanded}>
           <Fab onClick={submitNote}>
