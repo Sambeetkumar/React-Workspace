@@ -2,7 +2,7 @@ import React from 'react';
 let curryear = new Date().getFullYear();
 function Footer() {
     return ( 
-        <footer>
+        <footer className='absolute'>
             <p>Copyright© {curryear}</p>
         </footer>
      );

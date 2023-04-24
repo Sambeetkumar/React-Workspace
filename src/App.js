@@ -8,33 +8,35 @@ import CreateArea from "./components/CreateArea";
 function App() {
   const [notes, setNotes] = useState([]);
   function addNote(newNote) {
-    setNotes(prevNotes => {
+    setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
   }
 
   function deleteNote(id) {
-    setNotes(prevNotes => {
+    setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
     });
   }
   return (
-    <React.Fragment>
+    <div className="app min-h-screen relative flex flex-col gap-4 bg-zinc-100 dark:bg-zinc-900">
       <Header />
       <CreateArea onAdd={addNote} />
-      {notes.map((noteitem,index) => (
-        <Note
-          key={index}
-          id={index}
-          title={noteitem.title}
-          content={noteitem.content}
-          onDelete={deleteNote}
-        />
-      ))}
+      <div className="flex flex-col sm:flex-row sm:gap-4 flex-wrap my-6 items-center justify-center">
+        {notes.map((noteitem, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={noteitem.title}
+            content={noteitem.content}
+            onDelete={deleteNote}
+          />
+        ))}
+      </div>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 }
 export default App;

@@ -1,17 +1,15 @@
 header {
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+  top: 0;
+  width: 100%;
 }
 header h1{
   font-family: "McLaren", cursive;
 }
 .note {
   margin: 16px;
-  background-color: #fff;
-  width: 240px;
-  float: left;
   padding: 15px;
   border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
 }
 .note h2
  {
@@ -27,7 +25,6 @@ header h1{
 .note button {
   position: relative;
   float: right;
-  margin-right: 10px;
   color: #f5ba13;
   border: none;
   width: 36px;
@@ -39,11 +36,8 @@ header h1{
 form.create-note {
   position: relative;
   width: 30%;
-  margin: 30px auto 20px auto;
-  background: #fff;
   padding: 15px;
   border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 form.create-note input,
 form.create-note textarea {
@@ -60,7 +54,6 @@ form.create-note button {
   right: 18px;
   bottom: -18px;
   background: #f5ba13;
-  color: #fff;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -70,8 +63,7 @@ form.create-note button {
   outline: none;
 }
 footer {
-  position: absolute;
-  bottom: 3px;
+  bottom: 5px;
   text-align: center;
   width: 100%;
 }
