@@ -36,10 +36,10 @@ function CreateArea(props) {
     setExpanded(true);
   }
   return (
-      <form className="create-note mx-auto mt-6 bg-white dark:bg-zinc-950 border dark:border-white">
+      <form className="create-note text-black dark:text-white mx-auto mt-6 bg-white dark:bg-zinc-950 border dark:border-white shadow-md shadow-zinc-950/30">
         {isExpanded && (
           <input
-            className="bg-white text-white dark:bg-zinc-950 font-bold tracking-wider"
+            className="bg-white dark:bg-zinc-950 font-bold tracking-wider"
             name="title"
             onChange={handleChange}
             value={note.title}
@@ -48,7 +48,7 @@ function CreateArea(props) {
           />
         )}
         <textarea
-          className="text-white bg-white dark:bg-zinc-950"
+          className="bg-white dark:bg-zinc-950"
           name="content"
           onChange={handleChange}
           value={note.content}
@@ -57,7 +57,7 @@ function CreateArea(props) {
           onClick={expand}
           required
         />
-        <Zoom in={isExpanded} className="text-white dark:text-zinc-950">
+        <Zoom in={isExpanded}>
           <Fab onClick={submitNote}>
             <AddIcon />
           </Fab>

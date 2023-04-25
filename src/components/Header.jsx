@@ -1,12 +1,24 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import GitHubIcon from '@mui/icons-material/GitHub';
 function Header() {
+  const [theme, setTheme] = useState("dark");
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   function handleThemeToggle() {
+    setTheme(theme === "dark" ? "light" : "dark");
     setIsDark(!isDark);
   }
+  
   return (
     <header className="bg-yellow-500 text-white flex items-center justify-between px-4 md:px-8 py-4">
       <h1 className="text-xl text-white dark:text-zinc-950 md:text-3xl">
