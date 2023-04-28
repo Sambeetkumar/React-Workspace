@@ -2,11 +2,11 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 export default function Home() {
   return (
-    <section className="bg-yellow-200">
+    <section className="bg-yellow-200 min-h-screen flex flex-col items-center justify-center">
       <div className="px-6 py-8 lg:py-0 md:px-12 text-gray-800 text-center lg:text-left">
         <div className="container mx-auto xl:px-32">
           <div className="grid lg:grid-cols-2 flex items-center">
-            <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
+            <div className="md:mt-12 lg:mt-0 mb-8 lg:mb-0">
               <div
                 className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
                 style={{
