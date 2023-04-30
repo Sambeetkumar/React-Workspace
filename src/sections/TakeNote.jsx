@@ -19,6 +19,7 @@ import {
 } from "firebase/firestore";
 
 export default function TakeNote() {
+  const [avatar, setAvatar] = useState("");
   const [user,loading] = useAuthState(auth);
   const [notes, setNotes] = useState([]);
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function TakeNote() {
   const getData = async () => {
     if (loading) return;
     if (!user) return navigate("/");
-
+    setAvatar(user.photoURL);
     const collectionRef = collection(db, `${user.uid}`);
     const q = query(collectionRef, orderBy("timestamp","asc"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -59,7 +60,7 @@ export default function TakeNote() {
 
   return (
     <div className="app min-h-screen relative flex flex-col gap-4 bg-zinc-100 dark:bg-zinc-900">
-      <Header />
+      <Header avatar={avatar} />
       <CreateArea onAdd={addNote} />
       <div className="flex flex-col sm:flex-row sm:gap-4 flex-wrap my-6 items-center justify-center">
         {notes.map((noteitem, index) => (
