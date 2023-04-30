@@ -27,7 +27,6 @@ function Header() {
     try {
       signOut(auth);
       navigate("/");
-      console.log("signed out");
     } catch (error) {
       console.log(error);
     }
