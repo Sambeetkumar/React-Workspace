@@ -42,12 +42,16 @@ export default function Home() {
                   backdropFilter: "blur(30px)",
                 }}
               >
-                <h1 className="text-4xl md:text-4xl xl:text-6xl font-extrabold tracking-wide mb-6">
+                <h1 className="text-4xl md:text-4xl xl:text-6xl text-gray-800 font-extrabold tracking-wide mb-6">
                   NoteMaster
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold md:font-bold text-rose-600 mb-6">
-                  Take notes anytime! anywhere!
+                <h2 className="text-2xl md:text-3xl font-semibold md:font-bold text-rose-600 mb-4">
+                  Take notes anywhere! anytime!
                 </h2>
+                <p className="text-lg md:text-xl font-bold text-black mb-6">
+                  The NoteMaster is a free, open source and cloud based web app that allows user to take notes within
+                  the snap of a finger and also provides access to the notes from any device with an internet connection.
+                </p>
                 <button
                   className="flex items-center justify-start mx-auto lg:ml-0 gap-2 w-56 md:w-64 inline-block p-3 mb-2 md:mb-0 bg-gray-800 text-white font-bold text-sm md:text-lg leading-snug rounded-lg shadow-md hover:bg-gray-950 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-950 active:shadow-lg transition duration-150 ease-in-out"
                   data-mdb-ripple="true"
@@ -59,10 +63,10 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="md:mb-12 lg:mb-0">
+            <div className="md:mb-4 lg:mb-0">
               <img
                 src="https://images.unsplash.com/photo-1616628188467-8fb29f49bbe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQ2fHxub3Rlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="w-full rounded-lg shadow-lg max-h-screen"
+                className="w-auto mx-auto lg:ml-0 rounded-lg shadow-lg max-h-[95vh]"
                 alt=""
               />
             </div>
