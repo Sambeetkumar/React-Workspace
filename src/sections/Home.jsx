@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import {
   signInWithPopup,
   GoogleAuthProvider,
@@ -6,22 +6,29 @@ import {
 import { auth } from "../utils/firebase";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Home() {
 
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   //Sign in with google
   const googleProvider = new GoogleAuthProvider();
   const GoogleLogin = async () => {
     try {
-      const result = await signInWithPopup(auth, googleProvider);
-      console.log(result.user);
+      await signInWithPopup(auth, googleProvider);
       navigate("/notes");
     } catch (error) {
       console.log(error);
     }
   };
-  
+  useEffect(() => {
+    if (user) {
+      navigate("/notes");
+    } else {
+      console.log("login");
+    }
+  }, [user]);
   return (
     <section className="bg-yellow-200 min-h-screen flex flex-col items-center justify-center">
       <div className="px-6 py-8 lg:py-0 md:px-12 text-gray-800 text-center lg:text-left">
