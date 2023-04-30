@@ -1,9 +1,8 @@
 import React from 'react';
-let curryear = new Date().getFullYear();
 function Footer() {
     return ( 
-        <footer className='absolute'>
-            <p>Copyright© {curryear}</p>
+        <footer className='absolute font-mono text-gray-900 dark:text-white text-md md:text-lg'>
+            <p>Made with ❤️ by Sambeet </p>
         </footer>
      );
 }

@@ -67,9 +67,6 @@ footer {
   text-align: center;
   width: 100%;
 }
-footer p {
-  color: #ccc;
-}
 @media (width<=550px) {
   
 form.create-note{
