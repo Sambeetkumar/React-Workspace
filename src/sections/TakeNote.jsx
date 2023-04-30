@@ -11,6 +11,8 @@ import {
   addDoc,
   collection,
   onSnapshot,
+  doc,
+  deleteDoc,
   query,
   orderBy,
   serverTimestamp,
@@ -37,7 +39,6 @@ export default function TakeNote() {
   //write to database
   const addNote = async(newNote) => {
     const collectionRef = collection(db, `${user.uid}`);
-    console.log('test');
       await addDoc(collectionRef, {
         ...notes,
         timestamp: serverTimestamp(),
@@ -46,6 +47,11 @@ export default function TakeNote() {
         username: user.displayName,
       });
   }
+  //deleting data
+  const deleteNote = async (id) => {
+    const docRef = doc(db, `${user.uid}`, id);
+    await deleteDoc(docRef);
+  };
 
   useEffect(() => {
     getData();
@@ -59,10 +65,10 @@ export default function TakeNote() {
         {notes.map((noteitem, index) => (
           <Note
             key={index}
-            id={index}
+            id={noteitem.id}
             title={noteitem.title}
             content={noteitem.content}
-            //onDelete={deleteNote}
+            onDelete={deleteNote}
           />
         ))}
       </div>
