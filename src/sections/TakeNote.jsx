@@ -41,7 +41,6 @@ export default function TakeNote() {
   const addNote = async(newNote) => {
     const collectionRef = collection(db, `${user.uid}`);
       await addDoc(collectionRef, {
-        ...notes,
         timestamp: serverTimestamp(),
         title: newNote.title,
         content: newNote.content,
