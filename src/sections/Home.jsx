@@ -27,7 +27,7 @@ export default function Home() {
   }, [user]);
   return (
     <section className="bg-yellow-200 min-h-screen flex flex-col items-center justify-center">
-      <div className="z-10 fixed top-0 w-full bg-gray-900 px-4 py-3 text-white">
+      <div className="z-10 fixed top-0 w-full bg-zinc-950 px-4 py-3 text-white">
         <p className="text-center text-sm font-medium">
           Love Note master?{" "}
           <a href="https://github.com/Sambeetkumar/React-Workspace/tree/keeper-app" target="blank" className="inline-block underline underline-offset-4">
@@ -59,7 +59,7 @@ export default function Home() {
                   internet connection.
                 </p>
                 <button
-                  className="flex items-center justify-start mx-auto lg:ml-0 gap-2 w-56 md:w-64 inline-block p-3 mb-2 md:mb-0 bg-gray-800 text-white font-bold text-sm md:text-lg leading-snug rounded-lg shadow-md hover:bg-gray-950 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-950 active:shadow-lg transition duration-150 ease-in-out"
+                  className="flex items-center justify-start mx-auto lg:ml-0 gap-2 w-56 md:w-64 inline-block p-3 mb-2 md:mb-0 bg-zinc-800 text-white font-bold text-sm md:text-lg leading-snug rounded-lg shadow-md hover:bg-zinc-950 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-950 active:shadow-lg transition duration-150 ease-in-out"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                   onClick={GoogleLogin}
