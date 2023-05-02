@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import Zoom from "@mui/material/Zoom";
 
 function CreateArea(props) {
+  const formRef = useRef(null);
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -35,8 +36,20 @@ function CreateArea(props) {
   function expand() {
     setExpanded(true);
   }
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        setExpanded(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [formRef]);
+
   return (
-      <form className="create-note text-black dark:text-white mx-auto mt-6 bg-white dark:bg-zinc-950 border dark:border-white shadow-md shadow-zinc-950/30">
+      <form ref={formRef} className="create-note text-black dark:text-white mx-auto mt-6 bg-white dark:bg-zinc-950 border dark:border-white shadow-md shadow-zinc-950/30">
         {isExpanded && (
           <input
             className="bg-white dark:bg-zinc-950 font-bold tracking-wider"
