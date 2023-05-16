@@ -15,6 +15,7 @@ import {
   deleteDoc,
   query,
   orderBy,
+  updateDoc,
   serverTimestamp,
 } from "firebase/firestore";
 
@@ -54,7 +55,15 @@ export default function TakeNote() {
     const docRef = doc(db, `${user.uid}`, id);
     await deleteDoc(docRef);
   };
-
+  //update notes
+  const updateNote = async (id,title,content) => {
+    const docRef = doc(db, `${user.uid}`, id);
+    const updatedNotes = {
+      title: title,
+      content: content
+    };
+    await updateDoc(docRef, updatedNotes);
+  }
   useEffect(() => {
     getData();
   }, [user, loading]);
@@ -81,6 +90,7 @@ export default function TakeNote() {
               title={noteitem.title}
               content={noteitem.content}
               onDelete={deleteNote}
+              onUpdate={updateNote}
             />
           ))}
         </div>
